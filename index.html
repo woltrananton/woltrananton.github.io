@@ -5,13 +5,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Anton Wolter – Utvecklare, kreatör och problemlösare. Utforska mina projekt och kompetenser." />
+    content="Anton Wolter — IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL. Projekt, kompetenser och kontakt." />
+  <meta name="author" content="Anton Wolter" />
+  <meta name="theme-color" content="#059669" />
   <title>Anton Wolter | Portfolio</title>
+
+  <!-- Open Graph / Facebook / LinkedIn / Discord -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anton Wolter | Portfolio" />
+  <meta property="og:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL." />
+  <meta property="og:url" content="https://woltrananton.github.io/" />
+  <meta property="og:image" content="https://woltrananton.github.io/og-image.png" />
+  <meta property="og:locale" content="sv_SE" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anton Wolter | Portfolio" />
+  <meta name="twitter:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL." />
+  <meta name="twitter:image" content="https://woltrananton.github.io/og-image.png" />
+
+  <!-- Favicon (SVG inline — AW. i emerald) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f0e'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='ui-monospace,SFMono-Regular,Menlo,monospace' font-size='28' font-weight='700' fill='%2310b981'%3EAW%3C/text%3E%3Ccircle cx='52' cy='44' r='3' fill='%23d97706'/%3E%3C/svg%3E" />
 
   <!-- Google Font: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
   <!-- Lucide Icons (CDN) -->
@@ -126,6 +147,10 @@
               <span>Högskoleingenjör IT – Högskolan i Borås (år 2 av 3)</span>
             </div>
           </div>
+
+          <a href="#" class="btn btn-outline about-cv btn-disabled" aria-disabled="true" tabindex="-1">
+            <i data-lucide="file-down"></i> CV – kommer snart
+          </a>
         </div>
       </div>
     </div>
@@ -134,7 +159,7 @@
   <!-- ═══════════════════════════════════════════
        KOMPETENSER  (Skills)
   ═══════════════════════════════════════════ -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="section section--alt skills">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Kompetenser</h2>
 
@@ -285,8 +310,8 @@
               <span class="tag">Mapbox</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline btn-disabled">
-                <i data-lucide="github"></i> GitHub – kommer snart
+              <a href="https://github.com/woltrananton/fishscope-public" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="github"></i> GitHub
               </a>
             </div>
           </div>
@@ -313,7 +338,7 @@
               <span class="tag">Riverpod</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline btn-disabled">
+              <a href="#" class="btn btn-sm btn-outline btn-disabled" aria-disabled="true" tabindex="-1">
                 <i data-lucide="github"></i> GitHub – kommer snart
               </a>
             </div>
@@ -327,7 +352,7 @@
   <!-- ═══════════════════════════════════════════
        KONTAKT  (Contact)
   ═══════════════════════════════════════════ -->
-  <section id="contact" class="section contact">
+  <section id="contact" class="section section--alt contact">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Kontakt</h2>
       <p class="section-subtitle animate-on-scroll">
@@ -335,23 +360,30 @@
       </p>
 
       <div class="contact-grid animate-on-scroll">
-        <!-- Contact form (non-functional) -->
-        <form class="contact-form" onsubmit="return false;">
+        <!-- Contact form — skickas via Formspree -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqendqnz" method="POST">
           <div class="form-group">
             <label for="name">Namn</label>
-            <input type="text" id="name" placeholder="Ditt namn" required />
+            <input type="text" id="name" name="name" placeholder="Ditt namn" required />
           </div>
           <div class="form-group">
             <label for="email">E-post</label>
-            <input type="email" id="email" placeholder="din@email.se" required />
+            <input type="email" id="email" name="email" placeholder="din@email.se" required />
           </div>
           <div class="form-group">
             <label for="message">Meddelande</label>
-            <textarea id="message" rows="5" placeholder="Skriv ditt meddelande..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Skriv ditt meddelande..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">
+          <input type="hidden" name="_subject" value="Nytt meddelande från portfolio" />
+          <!-- Honeypot: osynligt för människor, bottar fyller ofta i alla fält -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contactSubmit">
             <i data-lucide="send"></i> Skicka meddelande
           </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
 
         <!-- Contact info sidebar -->
@@ -360,7 +392,7 @@
             <i data-lucide="mail"></i>
             <div>
               <h4>E-post</h4>
-              <a href="mailto:[EMAIL_ADDRESS]">woltrananton@gmail.com</a>
+              <a href="mailto:woltrananton@gmail.com">woltrananton@gmail.com</a>
             </div>
           </div>
           <div class="contact-info-card">
@@ -373,13 +405,24 @@
 
           <!-- Social links -->
           <div class="social-links">
-            <a href="https://github.com/woltrananton" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/woltrananton" class="social-link" aria-label="GitHub" target="_blank"
+              rel="noopener noreferrer">
               <svg height="22" width="22" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
               </svg>
             </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <i data-lucide="linkedin"></i>
+            <a href="https://www.linkedin.com/in/anton-wolter-88a2b03b7/" class="social-link" aria-label="LinkedIn"
+              target="_blank" rel="noopener noreferrer">
+              <svg height="22" width="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+              </svg>
+            </a>
+            <a href="https://www.credly.com/users/anton-wolter" class="social-link" aria-label="Credly – certifieringar"
+              target="_blank" rel="noopener noreferrer">
+              <i data-lucide="badge-check"></i>
             </a>
           </div>
         </div>

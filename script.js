@@ -22,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Apply the saved theme on page load.
-   * Defaults to light mode if no preference is stored.
+   * Priority: explicit user choice > OS preference > light fallback.
    */
   const savedTheme = localStorage.getItem(THEME_KEY);
-  if (savedTheme === 'light') {
-    // User explicitly chose light mode
-  } else {
-    // Default to dark mode for that tech aesthetic
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.body.classList.add('dark-mode');
   }
 
@@ -164,16 +163,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ═══════════════════════════════════════════════════════
-     6. CONTACT FORM – PLACEHOLDER SUBMIT HANDLER
-     ─ Shows a friendly confirmation message.
-       Replace with real form handling when ready.
+     6. CONTACT FORM – Formspree-integration via fetch
+     ─ Postar i bakgrunden så användaren stannar på sidan.
   ═══════════════════════════════════════════════════════ */
-  const contactForm = document.querySelector('.contact-form');
+  const contactForm = document.getElementById('contactForm');
+  const formStatus  = document.getElementById('formStatus');
+  const submitBtn   = document.getElementById('contactSubmit');
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert('Tack för ditt meddelande! (Detta formuläret är inte anslutet ännu.)');
-      contactForm.reset();
+
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+      submitBtn.disabled = true;
+      submitBtn.classList.add('btn-loading');
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'Tack! Ditt meddelande är skickat — jag återkommer så snart jag kan.';
+          formStatus.classList.add('form-status--success');
+          contactForm.reset();
+        } else {
+          const data = await response.json().catch(() => ({}));
+          const msg = data.errors?.map(e => e.message).join(', ')
+                   || 'Något gick fel. Försök igen eller mejla mig direkt på woltrananton@gmail.com.';
+          formStatus.textContent = msg;
+          formStatus.classList.add('form-status--error');
+        }
+      } catch (err) {
+        formStatus.textContent = 'Nätverksfel. Kontrollera din anslutning eller mejla mig direkt.';
+        formStatus.classList.add('form-status--error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('btn-loading');
+      }
     });
   }
 
