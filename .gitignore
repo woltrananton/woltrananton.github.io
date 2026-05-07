@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Claude Code lokal config
+.claude/
+
+# Node / build artifacts (om du lägger till verktyg senare)
+node_modules/
+dist/
+.env
+.env.local
+
+# Dokument som inte ska publikt
+*.pdf
