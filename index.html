@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Anton Wolter – Utvecklare, kreatör och problemlösare. Utforska mina projekt och kompetenser." />
+  <title>Anton Wolter | Portfolio</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <!-- Logo / brand -->
+      <a href="#hero" class="nav-logo">AW<span class="logo-dot">.</span></a>
+
+      <!-- Desktop navigation links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Om mig</a></li>
+        <li><a href="#skills">Kompetenser</a></li>
+        <li><a href="#projects">Projekt</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-actions">
+        <!-- Dark mode toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Växla tema">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Meny">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-content animate-on-scroll">
+      <p class="hero-greeting"><span class="mono">~/portfolio $</span> whoami</p>
+      <h1 class="hero-name">Anton Wolter</h1>
+      <p class="hero-tagline">
+        <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary"><i data-lucide="folder-open"></i> Mina projekt</a>
+        <a href="#contact" class="btn btn-outline"><i data-lucide="terminal"></i> Kontakta mig</a>
+      </div>
+    </div>
+    <!-- Decorative blobs -->
+    <div class="hero-blob hero-blob--1"></div>
+    <div class="hero-blob hero-blob--2"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       OM MIG  (About)
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Om mig</h2>
+      <div class="about-grid animate-on-scroll">
+        <div class="about-image">
+          <!-- Terminal-style avatar placeholder -->
+          <div class="about-image-placeholder terminal-avatar">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="t-prompt">$</span> cat about.txt</p>
+              <p class="t-output">IT-ingenjör</p>
+              <p class="t-output">Borås, Sverige</p>
+              <p><span class="t-prompt">$</span> <span class="cursor-blink">_</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            Jag studerar <strong>Högskoleingenjör IT</strong> vid Högskolan i Borås och
+            befinner mig på mitt andra av tre år. Mitt fokus ligger på fullstack-utveckling,
+            systemarkitektur och molnbaserade lösningar — men jag är lika hemma i
+            nätverkskonfiguration som i en kodbas.
+          </p>
+          <p>
+            Jag har praktisk erfarenhet av att bygga appar med <span class="mono">Flutter</span> och
+            <span class="mono">FastAPI</span>, hantera databaser i <span class="mono">PostgreSQL</span>
+            och deploya med <span class="mono">Docker</span>. Jag drivs av att förstå hela stacken —
+            från infrastruktur och nätverk till användargränssnitt.
+          </p>
+          <div class="about-details">
+            <div class="about-detail">
+              <i data-lucide="map-pin"></i>
+              <span>Torestorp, Sverige</span>
+            </div>
+            <div class="about-detail">
+              <i data-lucide="briefcase"></i>
+              <span>IT Student</span>
+            </div>
+            <div class="about-detail">
+              <i data-lucide="graduation-cap"></i>
+              <span>Högskoleingenjör IT – Högskolan i Borås (år 2 av 3)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       KOMPETENSER  (Skills)
+  ═══════════════════════════════════════════ -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Kompetenser</h2>
+
+      <!-- Språk & Ramverk -->
+      <div class="skills-category animate-on-scroll">
+        <h3 class="skills-category-title">Språk & Ramverk</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i data-lucide="smartphone"></i>
+            <span>Flutter / Dart</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="terminal"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="zap"></i>
+            <span>FastAPI</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="code-2"></i>
+            <span>HTML & CSS</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="braces"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="layers"></i>
+            <span>Riverpod / Provider</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend & Databaser -->
+      <div class="skills-category animate-on-scroll">
+        <h3 class="skills-category-title">Backend & Databaser</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i data-lucide="flame"></i>
+            <span>Firebase</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="database"></i>
+            <span>Supabase</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="database"></i>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="key"></i>
+            <span>REST API & JWT</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="database"></i>
+            <span>SQL & Dataanalys</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastruktur & DevOps -->
+      <div class="skills-category animate-on-scroll">
+        <h3 class="skills-category-title">Infrastruktur & DevOps</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i data-lucide="container"></i>
+            <span>Docker</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="git-branch"></i>
+            <span>Git & GitHub</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="network"></i>
+            <span>Nätverk (CCNA)</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="server"></i>
+            <span>Serversystem</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="shield"></i>
+            <span>Cybersäkerhet</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="cloud"></i>
+            <span>IoT & Molntjänster</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="monitor"></i>
+            <span>Linux / Windows Server</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personliga styrkor -->
+      <div class="skills-category animate-on-scroll">
+        <h3 class="skills-category-title">Personliga styrkor</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i data-lucide="lightbulb"></i>
+            <span>Kreativ problemlösning</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="users"></i>
+            <span>Teamwork</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="clock"></i>
+            <span>Tidshantering</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="message-circle"></i>
+            <span>Kommunikation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROJEKT  (Projects)
+  ═══════════════════════════════════════════ -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Projekt</h2>
+      <div class="projects-grid">
+
+        <!-- Project card 1 – FishScope -->
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-image-placeholder">
+              <i data-lucide="fish" style="width:48px;height:48px;"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">FishScope</h3>
+            <p class="project-description">
+              En fiske-app för Android och webb där du loggar fångster med väderdata,
+              karta och analys. Delade loggböcker, premium-funktioner och fullständig
+              REST-backend med JWT-autentisering.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Mapbox</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-outline btn-disabled">
+                <i data-lucide="github"></i> GitHub – kommer snart
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project card 2 – Tessra -->
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-image-placeholder">
+              <i data-lucide="blocks" style="width:48px;height:48px;"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Tessra</h3>
+            <p class="project-description">
+              Ett modulärt ERP-system för svenska företag — ordrar, lager, fakturering,
+              bokföring, E2EE-chatt och analytics. Widget-baserat, rollstyrt och
+              branschanpassat med multi-tenant arkitektur.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Riverpod</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-outline btn-disabled">
+                <i data-lucide="github"></i> GitHub – kommer snart
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       KONTAKT  (Contact)
+  ═══════════════════════════════════════════ -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Kontakt</h2>
+      <p class="section-subtitle animate-on-scroll">
+        Har du en idé eller vill samarbeta? Hör gärna av dig!
+      </p>
+
+      <div class="contact-grid animate-on-scroll">
+        <!-- Contact form (non-functional) -->
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Namn</label>
+            <input type="text" id="name" placeholder="Ditt namn" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-post</label>
+            <input type="email" id="email" placeholder="din@email.se" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Meddelande</label>
+            <textarea id="message" rows="5" placeholder="Skriv ditt meddelande..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i data-lucide="send"></i> Skicka meddelande
+          </button>
+        </form>
+
+        <!-- Contact info sidebar -->
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <i data-lucide="mail"></i>
+            <div>
+              <h4>E-post</h4>
+              <a href="mailto:[EMAIL_ADDRESS]">woltrananton@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <h4>Plats</h4>
+              <p>Torestorp, Sverige</p>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="https://github.com/woltrananton" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg height="22" width="22" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Anton Wolter. Alla rättigheter förbehållna.</p>
+      <a href="#hero" class="back-to-top" aria-label="Tillbaka till toppen">
+        <i data-lucide="arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
