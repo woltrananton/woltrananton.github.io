@@ -552,12 +552,48 @@ button:focus-visible,
   text-align: center;
 }
 
+.skills-category-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .9rem;
+  margin: -10px auto 20px;
+  max-width: 600px;
+}
+
+.skills-category-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.skills-category-note a:hover {
+  text-decoration: underline;
+}
+
+.skill-card small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 16px;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.skills-grid--center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skills-grid--center .skill-card {
+  width: 220px;
 }
 
 .skill-card {
@@ -589,6 +625,24 @@ button:focus-visible,
   border-color: var(--accent);
   transform: translateY(-4px);
   box-shadow: var(--card-hover-shadow);
+}
+
+.skill-card--cert {
+  text-decoration: none;
+  color: inherit;
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--bg-alt), color-mix(in srgb, var(--accent) 8%, transparent));
+  position: relative;
+}
+
+.skill-card--cert::after {
+  content: "↗";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: .8rem;
+  color: var(--accent);
+  opacity: .6;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -641,6 +695,15 @@ button:focus-visible,
   margin-bottom: 16px;
 }
 
+.project-note {
+  display: inline-block;
+  font-size: .82rem;
+  opacity: .75;
+  font-style: italic;
+  border-left: 2px solid var(--accent, #10b981);
+  padding-left: 10px;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -662,6 +725,24 @@ button:focus-visible,
 .project-links {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 6px 12px;
+  border: 1px dashed var(--border, #2a2d2c);
+  border-radius: 6px;
+}
+
+.project-status i {
+  width: 14px;
+  height: 14px;
 }
 
 /* ═══════════════════════════════════════════════════════

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Anton Wolter — IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL. Projekt, kompetenser och kontakt." />
+    content="Anton Wolter, IT-ingenjörsstudent vid Högskolan i Borås. Fokus på IoT, nätverk och systemintegration. Projekt, kompetenser och kontakt." />
   <meta name="author" content="Anton Wolter" />
   <meta name="theme-color" content="#059669" />
   <title>Anton Wolter | Portfolio</title>
@@ -13,7 +13,7 @@
   <!-- Open Graph / Facebook / LinkedIn / Discord -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Anton Wolter | Portfolio" />
-  <meta property="og:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL." />
+  <meta property="og:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fokus på IoT, nätverk och systemintegration." />
   <meta property="og:url" content="https://woltrananton.github.io/" />
   <meta property="og:image" content="https://woltrananton.github.io/og-image.png" />
   <meta property="og:locale" content="sv_SE" />
@@ -21,10 +21,10 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Anton Wolter | Portfolio" />
-  <meta name="twitter:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fullstack med Flutter, FastAPI och PostgreSQL." />
+  <meta name="twitter:description" content="IT-ingenjörsstudent vid Högskolan i Borås. Fokus på IoT, nätverk och systemintegration." />
   <meta name="twitter:image" content="https://woltrananton.github.io/og-image.png" />
 
-  <!-- Favicon (SVG inline — AW. i emerald) -->
+  <!-- Favicon (SVG inline, AW i emerald) -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f0e'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='ui-monospace,SFMono-Regular,Menlo,monospace' font-size='28' font-weight='700' fill='%2310b981'%3EAW%3C/text%3E%3Ccircle cx='52' cy='44' r='3' fill='%23d97706'/%3E%3C/svg%3E" />
 
@@ -62,13 +62,13 @@
       <!-- Right-side controls -->
       <div class="nav-actions">
         <!-- Dark mode toggle -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Växla tema">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
+        <button class="theme-toggle" id="themeToggle" aria-label="Växla tema" aria-pressed="false">
+          <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+          <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
         </button>
 
         <!-- Mobile hamburger -->
-        <button class="hamburger" id="hamburger" aria-label="Meny">
+        <button class="hamburger" id="hamburger" aria-label="Meny" aria-expanded="false" aria-controls="navLinks">
           <span></span>
           <span></span>
           <span></span>
@@ -114,24 +114,32 @@
             </div>
             <div class="terminal-body">
               <p><span class="t-prompt">$</span> cat about.txt</p>
-              <p class="t-output">IT-ingenjör</p>
-              <p class="t-output">Borås, Sverige</p>
+              <p class="t-output">IT-ingenjörsstudent</p>
+              <p class="t-output">Högskolan i Borås</p>
               <p><span class="t-prompt">$</span> <span class="cursor-blink">_</span></p>
             </div>
           </div>
         </div>
         <div class="about-text">
           <p>
-            Jag studerar <strong>Högskoleingenjör IT</strong> vid Högskolan i Borås och
-            befinner mig på mitt andra av tre år. Mitt fokus ligger på fullstack-utveckling,
-            systemarkitektur och molnbaserade lösningar — men jag är lika hemma i
-            nätverkskonfiguration som i en kodbas.
+            Jag läser <strong>Högskoleingenjör IT</strong> vid Högskolan i Borås, just nu inne på
+            termin 4 av 6. Mitt intresse ligger i skärningspunkten mellan <strong>nätverk, IoT och
+            mjukvara</strong>, där hårdvaran möter koden. Vid sidan av studierna bygger jag även
+            egna appar och småprojekt för att testa nya idéer och tekniker.
           </p>
           <p>
-            Jag har praktisk erfarenhet av att bygga appar med <span class="mono">Flutter</span> och
-            <span class="mono">FastAPI</span>, hantera databaser i <span class="mono">PostgreSQL</span>
-            och deploya med <span class="mono">Docker</span>. Jag drivs av att förstå hela stacken —
-            från infrastruktur och nätverk till användargränssnitt.
+            Just nu fokuserar jag mest på <strong>IoT och systemintegration</strong>: hur man får
+            sensorer, nätverk, molntjänster och användargränssnitt att prata med varandra på ett
+            rent och säkert sätt. Mitt senaste projekt analyserar WiFi-signaler för att avgöra
+            om ett rum är bemannat, utan kameror och utan taggar, bara genom att lyssna på de
+            signaler som redan finns i nätverket.
+          </p>
+          <p>
+            Utanför skärmen hittar du mig oftast vid vattnet med ett fiskespö eller ute i naturen.
+          </p>
+          <p>
+            Jag söker nu <strong>praktik</strong> där jag kan få erfarenhet från arbetslivet,
+            lära mig av människor som varit i branschen längre än jag, och bidra där jag kan.
           </p>
           <div class="about-details">
             <div class="about-detail">
@@ -140,11 +148,11 @@
             </div>
             <div class="about-detail">
               <i data-lucide="briefcase"></i>
-              <span>IT Student</span>
+              <span>Söker praktik</span>
             </div>
             <div class="about-detail">
               <i data-lucide="graduation-cap"></i>
-              <span>Högskoleingenjör IT – Högskolan i Borås (år 2 av 3)</span>
+              <span>Högskoleingenjör IT – Högskolan i Borås (termin 4 av 6)</span>
             </div>
           </div>
 
@@ -163,14 +171,36 @@
     <div class="container">
       <h2 class="section-title animate-on-scroll">Kompetenser</h2>
 
+      <!-- Certifieringar -->
+      <div class="skills-category animate-on-scroll">
+        <h3 class="skills-category-title">Certifieringar</h3>
+        <p class="skills-category-note">
+          Alla badges utfärdade av Cisco och verifierbara via
+          <a href="https://www.credly.com/users/anton-wolter" target="_blank" rel="noopener noreferrer">Credly</a>.
+        </p>
+        <div class="skills-grid skills-grid--center">
+          <a href="https://www.credly.com/users/anton-wolter" target="_blank" rel="noopener noreferrer" class="skill-card skill-card--cert">
+            <i data-lucide="badge-check"></i>
+            <span>Cisco CCNA</span>
+            <small>3 moduler · jan 2026</small>
+          </a>
+          <a href="https://www.credly.com/users/anton-wolter" target="_blank" rel="noopener noreferrer" class="skill-card skill-card--cert">
+            <i data-lucide="shield"></i>
+            <span>Introduction to Cybersecurity</span>
+            <small>Cisco · maj 2025</small>
+          </a>
+          <a href="https://www.credly.com/users/anton-wolter" target="_blank" rel="noopener noreferrer" class="skill-card skill-card--cert">
+            <i data-lucide="cpu"></i>
+            <span>IT Essentials</span>
+            <small>Cisco · nov 2024</small>
+          </a>
+        </div>
+      </div>
+
       <!-- Språk & Ramverk -->
       <div class="skills-category animate-on-scroll">
         <h3 class="skills-category-title">Språk & Ramverk</h3>
         <div class="skills-grid">
-          <div class="skill-card">
-            <i data-lucide="smartphone"></i>
-            <span>Flutter / Dart</span>
-          </div>
           <div class="skill-card">
             <i data-lucide="terminal"></i>
             <span>Python</span>
@@ -180,12 +210,16 @@
             <span>FastAPI</span>
           </div>
           <div class="skill-card">
-            <i data-lucide="code-2"></i>
-            <span>HTML & CSS</span>
+            <i data-lucide="smartphone"></i>
+            <span>Flutter / Dart</span>
           </div>
           <div class="skill-card">
             <i data-lucide="braces"></i>
             <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <i data-lucide="code-2"></i>
+            <span>HTML & CSS</span>
           </div>
           <div class="skill-card">
             <i data-lucide="layers"></i>
@@ -214,10 +248,6 @@
             <i data-lucide="key"></i>
             <span>REST API & JWT</span>
           </div>
-          <div class="skill-card">
-            <i data-lucide="database"></i>
-            <span>SQL & Dataanalys</span>
-          </div>
         </div>
       </div>
 
@@ -235,11 +265,7 @@
           </div>
           <div class="skill-card">
             <i data-lucide="network"></i>
-            <span>Nätverk (CCNA)</span>
-          </div>
-          <div class="skill-card">
-            <i data-lucide="server"></i>
-            <span>Serversystem</span>
+            <span>Nätverk & routing</span>
           </div>
           <div class="skill-card">
             <i data-lucide="shield"></i>
@@ -289,7 +315,37 @@
       <h2 class="section-title animate-on-scroll">Projekt</h2>
       <div class="projects-grid">
 
-        <!-- Project card 1 – FishScope -->
+        <!-- Project card 1 – WiFi RSSI Presence Detection -->
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-image-placeholder">
+              <i data-lucide="wifi" style="width:48px;height:48px;"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">WiFi RSSI Närvarodetektering</h3>
+            <p class="project-description">
+              Integritetsbevarande IoT-system som detekterar om ett rum är bemannat
+              genom att analysera RSSI-fluktuationer mellan router och anslutna enheter.
+              Isolation Forest + regeldetektorer, integrerat med Home Assistant och Azure IoT Hub.
+              Ingen kamera och inga taggar, bara signaler som redan finns i nätet.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Home Assistant</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Azure IoT</span>
+              <span class="tag">Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/woltrananton/Integrity-preserving-presence-detection-with-WiFi-RSSI-" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project card 2 – FishScope -->
         <article class="project-card animate-on-scroll">
           <div class="project-image">
             <div class="project-image-placeholder">
@@ -302,6 +358,8 @@
               En fiske-app för Android och webb där du loggar fångster med väderdata,
               karta och analys. Delade loggböcker, premium-funktioner och fullständig
               REST-backend med JWT-autentisering.
+              <br><br>
+              <em class="project-note">Obs: Live-versionen är främst i demonstrationssyfte, vissa funktioner saknas eller är begränsade.</em>
             </p>
             <div class="project-tags">
               <span class="tag">Flutter</span>
@@ -310,6 +368,9 @@
               <span class="tag">Mapbox</span>
             </div>
             <div class="project-links">
+              <a href="https://fishscope.se" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="external-link"></i> Live demo
+              </a>
               <a href="https://github.com/woltrananton/fishscope-public" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
                 <i data-lucide="github"></i> GitHub
               </a>
@@ -317,7 +378,7 @@
           </div>
         </article>
 
-        <!-- Project card 2 – Tessra -->
+        <!-- Project card 3 – Tessra -->
         <article class="project-card animate-on-scroll">
           <div class="project-image">
             <div class="project-image-placeholder">
@@ -327,7 +388,7 @@
           <div class="project-body">
             <h3 class="project-title">Tessra</h3>
             <p class="project-description">
-              Ett modulärt ERP-system för svenska företag — ordrar, lager, fakturering,
+              Ett modulärt ERP-system för svenska företag med ordrar, lager, fakturering,
               bokföring, E2EE-chatt och analytics. Widget-baserat, rollstyrt och
               branschanpassat med multi-tenant arkitektur.
             </p>
@@ -338,9 +399,9 @@
               <span class="tag">Riverpod</span>
             </div>
             <div class="project-links">
-              <a href="#" class="btn btn-sm btn-outline btn-disabled" aria-disabled="true" tabindex="-1">
-                <i data-lucide="github"></i> GitHub – kommer snart
-              </a>
+              <span class="project-status">
+                <i data-lucide="hammer"></i> Pågående projekt
+              </span>
             </div>
           </div>
         </article>

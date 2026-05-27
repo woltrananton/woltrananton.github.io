@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
 
   // ── DOM References ───────────────────────────────────
-  const navbar      = document.getElementById('navbar');
-  const hamburger   = document.getElementById('hamburger');
-  const navLinks    = document.getElementById('navLinks');
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
   const themeToggle = document.getElementById('themeToggle');
 
   /* ═══════════════════════════════════════════════════════
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.body.classList.add('dark-mode');
+    themeToggle.setAttribute('aria-pressed', 'true');
   }
 
   /** Toggle theme and persist choice */
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
 
     // Re-render icons after class change so sun/moon swap immediately
     lucide.createIcons();
@@ -58,8 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
        the hamburger icon into an "X".
   ═══════════════════════════════════════════════════════ */
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
+    const isOpen = hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // Close mobile menu when a link is clicked
@@ -67,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
   });
 
@@ -101,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ═══════════════════════════════════════════════════════ */
   const typewriterEl = document.getElementById('typewriter');
   const phrases = [
-    'IT-ingenjörsstudent med fokus på fullstack.',
+    'IT-ingenjörsstudent på Högskolan i Borås.',
     'Bygger appar med Flutter & FastAPI.',
-    'Systemarkitektur · Nätverk · Moln.',
+    'Systemarkitektur · Nätverk · Moln · Säkerhet.',
     'Från infrastruktur till användargränssnitt.',
   ];
 
@@ -167,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
      ─ Postar i bakgrunden så användaren stannar på sidan.
   ═══════════════════════════════════════════════════════ */
   const contactForm = document.getElementById('contactForm');
-  const formStatus  = document.getElementById('formStatus');
-  const submitBtn   = document.getElementById('contactSubmit');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('contactSubmit');
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -193,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           const data = await response.json().catch(() => ({}));
           const msg = data.errors?.map(e => e.message).join(', ')
-                   || 'Något gick fel. Försök igen eller mejla mig direkt på woltrananton@gmail.com.';
+            || 'Något gick fel. Försök igen eller mejla mig direkt på woltrananton@gmail.com.';
           formStatus.textContent = msg;
           formStatus.classList.add('form-status--error');
         }
